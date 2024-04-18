@@ -36,14 +36,44 @@ $productionInstance_1->playPause(); */
 <body>
 
   <div id='app'>
-    <h1>Movie list</h1>
 
-    <ul>
-      <?php foreach ($production_list as $movie) : ?>
-        <li><?php echo $movie->title; ?></li>
-      <?php endforeach; ?>
-    </ul>
+    <div class="container">
+      <h1>Movie list</h1>
 
+      <div class="table-responsive">
+
+        <table class="table table-striped table-light table-hover">
+
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Language</th>
+              <th scope="col">Vote</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <?php foreach ($production_list as $movie) : ?>
+
+              <tr>
+
+                <td> <?php echo $movie->title; ?> </td>
+                <td> <?php echo $movie->language; ?> </td>
+                <td> <?php echo $movie->vote; ?>/10 </td>
+
+              </tr>
+
+            <?php endforeach; ?>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+  </div>
   </div>
 
 
