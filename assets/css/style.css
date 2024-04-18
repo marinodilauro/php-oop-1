@@ -12,5 +12,35 @@ body {
 }
 
 .card {
-  min-height: 475px;
+  min-height: 400px;
+
+  .card-header {
+    min-height: 115px;
+    background-color: white;
+    border: none;
+  }
+
+  .card-body {
+    .is_playing {
+      height: 30px;
+      width: 50px;
+      padding: 10px;
+      border: 1px solid rgb(129, 129, 129);
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.8rem;
+      line-height: 10px;
+
+    }
+  }
+
+  .card-footer {
+
+    .genre,
+    .vote {
+      font-size: 0.9rem;
+    }
+  }
 }

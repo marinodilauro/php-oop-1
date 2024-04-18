@@ -52,21 +52,28 @@ $productionInstance_1->playPause(); */
       <h1 class="display-4 fw-bold">Movie list</h1>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
-        <?php foreach ($production_list as $movie) : ?>
+        <?php foreach ($production_list as $key => $movie) : ?>
           <div class="col">
             <div class="card">
 
-              <h4 class="card-header"><strong> <?php echo $movie->title; ?> </strong></h4>
+              <div class="card-header">
+                <h4><strong> <?php echo $movie->title; ?> </strong></h4>
+              </div>
 
-              <div class="card-body">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, consequatur neque, maxime quod quaerat sapiente laboriosam recusandae reiciendis voluptates eaque dolor ratione repellendus provident. Eum deserunt harum tempora quis commodi?
+              <div class="card-body d-flex flex-column justify-content-between">
+                <p>
+                  <strong> Description: </strong>
+                  <br>
+                  <?php echo $movie->genre->description; ?>
+                </p>
               </div>
 
               <div class="card-footer">
                 <p><strong> Language: </strong> <?php echo $movie->language; ?></p>
 
                 <div class="d-flex justify-content-between align-items-center">
-                  <p class="m-0"><strong> Vote: </strong> <?php echo $movie->vote; ?>/10</p>
+                  <p class="genre m-0"><strong> Genre: </strong> <?php echo $movie->genre->name; ?></p>
+                  <p class="vote m-0"><strong> Vote: </strong> <?php echo $movie->vote; ?>/10</p>
                   <button class="btn btn-success">Play</button>
                 </div>
 
