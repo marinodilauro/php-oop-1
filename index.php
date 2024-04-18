@@ -30,6 +30,17 @@ $productionInstance_1->playPause(); */
   <!-- Bootstrap CSS link -->
   <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' crossorigin='anonymous'>
 
+  <!-- Fontawesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+  <!-- CSS link -->
+  <link href='./assets/css/style.css' rel='stylesheet'>
+
   <title>php-oop-1</title>
 </head>
 
@@ -37,42 +48,38 @@ $productionInstance_1->playPause(); */
 
   <div id='app'>
 
-    <div class="container">
-      <h1>Movie list</h1>
+    <div class="container my-4">
+      <h1 class="display-4 fw-bold">Movie list</h1>
 
-      <div class="table-responsive">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
+        <?php foreach ($production_list as $movie) : ?>
+          <div class="col">
+            <div class="card">
 
-        <table class="table table-striped table-light table-hover">
+              <h4 class="card-header"><strong> <?php echo $movie->title; ?> </strong></h4>
 
-          <thead class="table-dark">
-            <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Language</th>
-              <th scope="col">Vote</th>
-            </tr>
-          </thead>
+              <div class="card-body">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, consequatur neque, maxime quod quaerat sapiente laboriosam recusandae reiciendis voluptates eaque dolor ratione repellendus provident. Eum deserunt harum tempora quis commodi?
+              </div>
 
-          <tbody>
+              <div class="card-footer">
+                <p><strong> Language: </strong> <?php echo $movie->language; ?></p>
 
-            <?php foreach ($production_list as $movie) : ?>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p class="m-0"><strong> Vote: </strong> <?php echo $movie->vote; ?>/10</p>
+                  <button class="btn btn-success">Play</button>
+                </div>
 
-              <tr>
+              </div>
 
-                <td> <?php echo $movie->title; ?> </td>
-                <td> <?php echo $movie->language; ?> </td>
-                <td> <?php echo $movie->vote; ?>/10 </td>
-
-              </tr>
-
-            <?php endforeach; ?>
-
-          </tbody>
-
-        </table>
-
+            </div>
+          </div>
+        <?php endforeach; ?>
       </div>
 
     </div>
+
+  </div>
   </div>
   </div>
 

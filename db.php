@@ -3,7 +3,7 @@ require_once __DIR__ . './models/Production.php';
 
 $production_list = [
   $productionInstance_1 = new Production("Dune", "Inglese", 7),
-  $productionInstance_2 = new Production("Bienvenue chez les Ch'tis", "Francese", 7),
+  $productionInstance_2 = new Production("Giù al Nord", "Francese", 7),
   $productionInstance_3 = new Production("La vita è bella", "Italiano", 8),
   $productionInstance_4 = new Production("Il Signore degli Anelli: La Compagnia dell'Anello", "Inglese", 9),
   $productionInstance_5 = new Production("Pulp Fiction", "Inglese", 10),
