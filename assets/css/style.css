@@ -12,7 +12,7 @@ body {
 }
 
 .card {
-  min-height: 460px;
+  min-height: 485px;
 
   .card-header,
   .card-body,
@@ -28,10 +28,12 @@ body {
   }
 
   .card-body {
+    padding-top: 0;
+
     .is_playing {
       height: 30px;
       width: 50px;
-      padding: 0 10px 10px 10px;
+      padding: 10px;
       border: 1px solid rgb(129, 129, 129);
       border-radius: 20px;
       display: flex;

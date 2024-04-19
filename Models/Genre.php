@@ -3,7 +3,7 @@
 class Genre
 {
   // Constructor
-  public function __construct(public string $name, public string $description)
+  public function __construct(public array $names, public string $description)
   {
   }
 }

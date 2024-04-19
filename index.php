@@ -58,12 +58,30 @@ require_once __DIR__ . './db.php';
               </div>
 
               <div class="card-footer">
+
                 <p><strong> Language: </strong> <?php echo $movie->language; ?></p>
 
                 <div class="d-flex justify-content-between align-items-center">
-                  <p class="genre m-0"><strong> Genre: </strong> <?php echo $movie->genre->name; ?></p>
+
+                  <p class="genre m-0"><strong> Genre: </strong>
+
+                    <?php foreach ($movie->genre->names as $key => $genre) : ?>
+
+                      <!-- Print a comma for every genre in the array but the least -->
+                      <?php if ($key != (sizeof($movie->genre->names) - 1)) : ?>
+                        <span> <?php echo $genre; ?>, </span>
+                      <?php else : ?>
+                        <span> <?php echo $genre; ?> </span>
+                      <?php endif; ?>
+
+                    <?php endforeach; ?>
+
+                  </p>
+
                   <p class="vote m-0"><strong> Vote: </strong> <?php echo $movie->vote; ?>/10</p>
+
                   <button class="btn btn-success">Play</button>
+
                 </div>
 
               </div>
@@ -77,7 +95,7 @@ require_once __DIR__ . './db.php';
 
     <!-- TV Series list -->
     <div class="container my-4">
-      <h1 class="display-4 fw-bold">TV Seires list</h1>
+      <h1 class="display-4 fw-bold">TV Series list</h1>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
         <?php foreach ($tvSerie_list as $key => $tvSerie) : ?>
@@ -100,12 +118,30 @@ require_once __DIR__ . './db.php';
               </div>
 
               <div class="card-footer">
+
                 <p><strong> Language: </strong> <?php echo $tvSerie->language; ?></p>
 
                 <div class="d-flex justify-content-between align-items-center">
-                  <p class="genre m-0"><strong> Genre: </strong> <?php echo $tvSerie->genre->name; ?></p>
+
+                  <p class="genre m-0"><strong> Genre: </strong>
+
+                    <?php foreach ($tvSerie->genre->names as $key => $genre) : ?>
+
+                      <!-- Print a comma for every genre in the array but the least -->
+                      <?php if ($key != (sizeof($tvSerie->genre->names) - 1)) : ?>
+                        <span> <?php echo $genre; ?>, </span>
+                      <?php else : ?>
+                        <span> <?php echo $genre; ?> </span>
+                      <?php endif; ?>
+
+                    <?php endforeach; ?>
+
+                  </p>
+
                   <p class="vote m-0"><strong> Vote: </strong> <?php echo $tvSerie->vote; ?>/10</p>
+
                   <button class="btn btn-success">Play</button>
+
                 </div>
 
               </div>
