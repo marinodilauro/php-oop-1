@@ -1,23 +1,6 @@
 <?php
 require_once __DIR__ . './db.php';
 
-
-// var_dump($productionInstance_1);
-
-// var_dump($productionInstance_2);
-
-// var_dump($productionInstance_3);
-
-// var_dump($production_list);
-
-/* $productionInstance_1->playPause();
-echo '<br>';
-$productionInstance_1->playPause();
-echo '<br>';
-$productionInstance_1->playPause();
-echo '<br>';
-$productionInstance_1->playPause(); */
-
 ?>
 
 <!doctype html>
@@ -66,6 +49,11 @@ $productionInstance_1->playPause(); */
                   <br>
                   <?php echo $movie->genre->description; ?>
                 </p>
+
+                <p><strong> Profit: </strong> <?php echo $movie->profit; ?></p>
+
+                <p><strong> Duration: </strong> <?php echo $movie->duration; ?> min</p>
+
               </div>
 
               <div class="card-footer">
