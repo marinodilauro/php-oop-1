@@ -14,6 +14,13 @@ body {
 .card {
   min-height: 400px;
 
+  .card-header,
+  .card-body,
+  .card-footer {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
   .card-header {
     min-height: 115px;
     background-color: white;

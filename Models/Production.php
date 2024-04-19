@@ -2,6 +2,7 @@
 
 class Production
 {
+  // Variables
   public static $isPlaying;
 
   // Constructor
