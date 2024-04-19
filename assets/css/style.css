@@ -12,7 +12,7 @@ body {
 }
 
 .card {
-  min-height: 485px;
+  min-height: 500px;
 
   .card-header,
   .card-body,
@@ -30,7 +30,7 @@ body {
   .card-body {
     padding-top: 0;
 
-    .is_playing {
+    .badge {
       height: 30px;
       width: 50px;
       padding: 10px;
@@ -41,8 +41,16 @@ body {
       align-items: center;
       font-size: 0.8rem;
       line-height: 10px;
-
     }
+
+  }
+
+  .not_seen {
+    background-color: red;
+  }
+
+  .seen {
+    background-color: green;
   }
 
   .card-footer {

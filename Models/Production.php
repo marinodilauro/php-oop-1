@@ -3,7 +3,7 @@
 class Production
 {
   // Variables
-  public static $isPlaying;
+  public static $isSeen = false;
 
   // Constructor
   public function __construct(public string $title, public string $language, public int $vote, public Genre $genre)
@@ -13,14 +13,8 @@ class Production
   // Methods
   public function playPause()
   {
-    $this->isPlaying = true;
-    echo 'Playing ' .  $this->title;
-    var_dump($this->isPlaying);
-
-    if ($this->isPlaying) {
-      $this->isPlaying = false;
-      echo 'Pausing ' .  $this->title;
-      var_dump($this->isPlaying);
-    }
+    $this->isSeen = true;
+    echo $this->title . ' was seen';
+    var_dump($this->isSeen);
   }
 }
