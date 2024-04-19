@@ -31,11 +31,12 @@ require_once __DIR__ . './db.php';
 
   <div id='app'>
 
+    <!-- Movies list -->
     <div class="container my-4">
       <h1 class="display-4 fw-bold">Movie list</h1>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
-        <?php foreach ($production_list as $key => $movie) : ?>
+        <?php foreach ($movie_list as $key => $movie) : ?>
           <div class="col">
             <div class="card">
 
@@ -74,8 +75,48 @@ require_once __DIR__ . './db.php';
 
     </div>
 
-  </div>
-  </div>
+    <!-- TV Series list -->
+    <div class="container my-4">
+      <h1 class="display-4 fw-bold">TV Seires list</h1>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
+        <?php foreach ($tvSerie_list as $key => $tvSerie) : ?>
+          <div class="col">
+            <div class="card">
+
+              <div class="card-header">
+                <h4><strong> <?php echo $tvSerie->title; ?> </strong></h4>
+              </div>
+
+              <div class="card-body d-flex flex-column justify-content-between">
+                <p>
+                  <strong> Description: </strong>
+                  <br>
+                  <?php echo $tvSerie->genre->description; ?>
+                </p>
+
+                <p><strong> Number of seasons: </strong> <?php echo $tvSerie->numberOfSeasons; ?></p>
+
+              </div>
+
+              <div class="card-footer">
+                <p><strong> Language: </strong> <?php echo $tvSerie->language; ?></p>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <p class="genre m-0"><strong> Genre: </strong> <?php echo $tvSerie->genre->name; ?></p>
+                  <p class="vote m-0"><strong> Vote: </strong> <?php echo $tvSerie->vote; ?>/10</p>
+                  <button class="btn btn-success">Play</button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
+
   </div>
 
 
